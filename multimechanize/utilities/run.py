@@ -95,7 +95,7 @@ def run_test(project_name, cmd_opts, remote_starter=None):
                             script_file, run_time, rampup)
         user_groups.append(ug)
     for user_group in user_groups:
-        if sys.platform == 'win32':
+        if sys.platform.startswith('win'):
             user_group.run()
         else:
             user_group.start()
